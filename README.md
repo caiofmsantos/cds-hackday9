@@ -18,19 +18,26 @@ As etapas principais da análise incluem:
 
 ---
 
+## Consolidação da Apresentação
+
+A apresentação consolidada deste projeto foi realizada utilizando o aplicativo **Briefer** e pode ser acessada pelo seguinte link:
+
+[Dashboard do Projeto no Briefer](https://app.briefer.cloud/workspaces/b478bb8d-295e-42f6-8815-9f0738028af3/documents/def45c84-d03e-4d72-b602-a6ea02f820fc/dashboard?sidebarCollapsed=true)
+
+---
+
 ## Estrutura do Repositório
 
 ```plaintext
 .
-├── checkpoints/          # Arquivos de checkpoints de notebooks (ignorados pelo Git)
 ├── data/                 # Dados brutos para análise
-│   └── full-data.csv
+│   ├── full-data.csv
+│   ├── orders_data.csv
+│   └── sales-data.csv
+├── data-analysis.ipynb   # Notebook principal com análises detalhadas e insights
 ├── data-import.ipynb     # Notebook de importação e pré-processamento dos dados
-├── hackday9-bi_v3.ipynb  # Notebook principal com análises detalhadas e insights
 ├── plot_utils.py         # Script em Python com utilitários para geração de gráficos
-├── __pycache__/          # Arquivos compilados do Python (ignorados pelo Git)
-├── story-telling/        # Narrativas e insights gerados durante o desafio
-│   ├── insights.md
-│   └── Insights_v2.md
-└── README.md             # Este arquivo de documentação
-
+├── README.md             # Arquivo de documentação do projeto
+└── story-telling/        # Narrativas e insights gerados durante o desafio
+    ├── insights.md
+    └── Insights_v2.md
