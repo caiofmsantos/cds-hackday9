@@ -1,5 +1,5 @@
-import plotly.express as px
 import pandas as pd
+import plotly.express as px
 
 # Function to create a horizontal bar graph for any categorical column
 def create_horizontal_bar_plot(dataframe, column_name):
@@ -14,8 +14,7 @@ def create_horizontal_bar_plot(dataframe, column_name):
         title=f'Distribution of {column_name.replace("_", " ").title()}',
         labels={'Count': 'Count', column_name.replace('_', ' ').title(): column_name.replace('_', ' ').title()},
         orientation='h',
-        color='Count',
-        color_continuous_scale='Viridis_r'
+        color_discrete_sequence=['skyblue']  # Use plain sky blue color
     )
 
     fig.update_layout(
@@ -36,7 +35,7 @@ def create_box_plot(dataframe, column_name):
         x=column_name,
         title=f'Box Plot Distribution of {column_name.title()} Amounts',
         labels={column_name: f'{column_name.title()} Amount'},
-        color_discrete_sequence=['skyblue']
+        color_discrete_sequence=['skyblue']  # Use plain sky blue color
     )
     fig.update_layout(
         yaxis_title=f'{column_name.title()} Amount',
@@ -65,17 +64,15 @@ def create_high_value_bar_plot(dataframe, column_name, aggregation_column, quant
         title=f'High {aggregation_column.title()} by {column_name.title()}',
         labels={column_name: column_name.replace('_', ' ').title(), aggregation_column: aggregation_column.replace('_', ' ').title()},
         orientation='h',
-        color=aggregation_column,
-        color_continuous_scale='Viridis_r'
+        color_discrete_sequence=['skyblue']  # Use plain sky blue color
     )
 
     fig.update_layout(
         xaxis_title=aggregation_column.replace('_', ' ').title(),
         yaxis_title=column_name.replace('_', ' ').title(),
         template='plotly_white',
-        height=400,
-        width=1200
+        height=600,
+        width=1600
     )
 
     fig.show()
-
